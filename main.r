@@ -14,6 +14,7 @@ lockBinding('REPRODUCTION', globalenv())
 conway.width <- 20
 conway.height <- 10
 conway.readFrom <- 1
+conway.divider <- paste(rep('-', conway.width), collapse='')
 
 conway.boardList <- list(matrix(DEAD, ncol=conway.width, nrow=conway.height, byrow=TRUE),
                          matrix(sample(DEAD:LIVE, conway.width*conway.height, replace=T), ncol=conway.width, nrow=conway.height, byrow=TRUE))
@@ -93,7 +94,7 @@ conway.tick <- function() {
 
 while(TRUE){
     conway.print(conway.boardList[[2]]);
-    print('')
+    print(conway.divider)
     conway.tick()
     Sys.sleep(0.5)
 }
